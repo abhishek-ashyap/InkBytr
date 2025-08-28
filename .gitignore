@@ -1,0 +1,18 @@
+# Dependencies
+/node_modules
+/Client/node_modules
+/Server/node_modules
+
+# Environment variables
+.env
+/Client/.env
+/Server/.env
+
+# Production build folder
+/dist
+/Client/dist
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
