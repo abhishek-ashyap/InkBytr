@@ -1,110 +1,112 @@
-SnapTour 🚀
+InkBytr 🖋️
 ===========
 
-**Create and share beautiful, interactive product demos in seconds.**
-
-[**Live Demo**](https://snap-tour.vercel.app/)
+**A production-grade, full-stack blogging ecosystem engineered for scalability and performance.**
 
 * * *
 
 📜 Description
 --------------
 
-SnapTour is a full-stack web application designed to empower users to build engaging, step-by-step product tours without writing any code. Inspired by platforms like Arcade, this project provides a miniature yet powerful version of a collaborative product demo platform. Users can sign up, create tours by uploading screenshots, add descriptive captions, and share their interactive stories with a public or private link.
+InkBytr is a sophisticated content platform that goes beyond simple CRUD operations. It is architected to demonstrate a complete, secure, and modern web application workflow.
 
-This project was built from scratch to demonstrate a modern full-stack architecture, featuring a secure Node.js REST API and a dynamic, beautifully animated React frontend.
+Unlike basic templates, InkBytr implements a strict **Model-View-Controller (MVC)** pattern on the backend and a **Flux-inspired** state architecture on the frontend. It is designed to handle real-world scenarios including secure authentication, strict data validation, protected API routes, and transactional email delivery.
 
-✨ Features
-----------
+⚙️ System Architecture & Workflow
+---------------------------------
 
-*   **Secure Authentication:** Full user registration and login system using JSON Web Tokens (JWT), including a "Forgot Password" flow.
-*   **Interactive Tour Editor:** A comprehensive three-column editor to create, read, update, and delete tours and their individual steps.
-*   **Step Management:** Easily add, delete, and modify steps, including captions and placeholder images.
-*   **Public & Private Sharing:** Control the visibility of your tours with a "Make Public" toggle, enabling link-based sharing.
-*   **Dedicated Public Viewer:** A clean, read-only interface for viewing shared tours, complete with step-by-step navigation.
-*   **Responsive & Attractive UI:** A modern, fully responsive user interface built with Tailwind CSS and gracefully animated with Framer Motion, featuring a consistent "glassmorphism" theme.
-*   **Dashboard:** A central hub for users to view all their created demos, with mocked analytics for engagement.
-*   **Basic Screen Recording:** Demonstrates the use of the browser's `MediaRecorder` API to initiate screen capture.
+This project connects several powerful technologies into a cohesive workflow:
+
+1.  **Client-Side Entry:** Users interact with a highly responsive UI built on **React 19** and **Radix UI**.
+2.  **Data Validation Layer:** Before any data leaves the browser, it is rigorously validated using **Zod** schemas integrated with **React Hook Form**. This ensures only clean, type-safe data reaches the API.
+3.  **State Management:** Application state (User Sessions, UI Themes, Post Data) is centralized in **Redux Toolkit**, preventing prop-drilling and ensuring predictable UI updates.
+4.  **Secure API Transport:** **Axios** interceptors manage HTTP requests, attaching **JWT** tokens automatically to protected routes.
+5.  **Backend Security Guard:** The Node.js server uses **Helmet** to set secure HTTP headers and **Express-Rate-Limit** to throttle abusive requests before they hit the controller logic.
+6.  **Business Logic & Persistence:** Controllers process the data, interacting with **MongoDB** via **Mongoose** schemas to ensure database integrity.
+7.  **External Services:** Asynchronous tasks, such as sending welcome emails or password resets, are offloaded to **SendGrid**.
+
+✨ Key Features
+--------------
+
+* **Advanced Authentication:**
+    * Stateless session management using **JSON Web Tokens (JWT)**.
+    * Password security via **Bcrypt** hashing.
+    * Secure "Forgot Password" flows via email.
+
+* **Robust Frontend Engineering:**
+    * **Redux Toolkit** for global state management.
+    * **React Hook Form + Zod** for schema-based form validation.
+    * **Tailwind CSS + Radix UI** for accessible, headless component design.
+    * **Lucide React** for consistent iconography.
+
+* **Production-Ready Backend:**
+    * **API Security:** CORS configuration, Helmet headers, and Rate Limiting.
+    * **Database:** Mongoose ODM with strict schema definitions.
+    * **Testing:** Unit and integration testing setup with **Jest** and **Supertest**.
+    * **Email:** Transactional email integration via **SendGrid**.
 
 💻 Tech Stack
 -------------
 
-### Frontend
+### Client (Frontend)
 
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Zod](https://img.shields.io/badge/Zod-3068B7?style=for-the-badge&logo=zod&logoColor=white)
 
-### Backend
+### Server (Backend)
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
-
-### Deployment
-
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) ![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) ![SendGrid](https://img.shields.io/badge/SendGrid-1A82E2?style=for-the-badge&logo=twilio&logoColor=white)
 
 🛠️ Installation
 ----------------
 
 1.  **Clone the repository:**
-    
-        git clone https://github.com/YourUsername/SnapTour.git
-        cd SnapTour
-    
+
+        git clone https://github.com/YourUsername/inkbytr.git
+        cd InkBytr
+
 2.  **Backend Setup:**
-    
-        # Navigate to the backend directory
-        cd backend
-        
+
+        # Navigate to the server directory
+        cd Server
+
         # Install dependencies
         npm install
-    
-    Create a `.env` file and add the following:
-    
-        PORT=5001
-        DATABASE_URL="postgresql://YOUR_POSTGRES_USER:YOUR_PASSWORD@localhost:5432/snaptour_db"
-        JWT_SECRET="YOUR_SUPER_SECRET_KEY"
-    
-    Set up a local PostgreSQL database named `snaptour_db` and run the migrations from the root project directory:
-    
-        psql -d snaptour_db -f backend/src/db/migrations.sql
-        psql -d snaptour_db -f backend/src/db/migrations_02.sql
-    
+
+    Create a `.env` file in the `Server/` folder and add the following:
+
+        PORT=5000
+        MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/inkbytr
+        JWT_SECRET=your_super_secret_key
+        SENDGRID_API_KEY=SG.your_sendgrid_key
+
 3.  **Frontend Setup:**
-    
-        # Navigate to the frontend directory from the root
-        cd frontend
-        
+
+        # Navigate to the client directory
+        cd ../Client
+
         # Install dependencies
         npm install
-    
+
+    Create a `.env` file in the `Client/` folder:
+
+        VITE_API_URL=http://localhost:5000/api
 
 🚀 Usage
 --------
 
 1.  **Run the Backend Server:**
-    
-        # From the /backend directory
+
+        # From the /Server directory
         npm run dev
-    
-    The backend will be available at `http://localhost:5001`.
-    
+
+    The backend will be available at `http://localhost:5000`.
+
 2.  **Run the Frontend Server:**
-    
-        # From the /frontend directory
+
+        # From the /Client directory
         npm run dev
-    
+
     The frontend will be available at `http://localhost:5173`.
-    
-
-📸 Screenshots
---------------
-
-Login Page
-
-Dashboard
-
-Editor
-
-Public Viewer
 
 🤝 Contributing
 ---------------
