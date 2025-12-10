@@ -170,7 +170,7 @@ Contributions are welcome! If you'd like to improve the code or add features:
 **Abhishek Kashyap**
 
 * Github: [@abhishek-ashyap](https://github.com/abhishek-ashyap)
-* LinkedIn: [Abhishek Kashyap] (https://www.linkedin.com/in/abhishek--kashyap/)
+* LinkedIn: [Abhishek Kashyap](https://www.linkedin.com/in/abhishek--kashyap/)
 
 ## 📄 License
 
