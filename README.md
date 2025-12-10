@@ -2,7 +2,7 @@
 
 **A production-grade, secure, and scalable full-stack blogging ecosystem.**
 
-[**Live Demo**](https://inkbytr.vercel.app/)
+[**Live Demo**](https://ink-bytr.vercel.app/)
 
 ---
 
